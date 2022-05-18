@@ -1,0 +1,11 @@
+<div style="font-size:32px"> 
+  <%= @task.name %> 
+</div>
+<div>
+  <%= @task.description %>
+</div>
+<div>
+  <%= @task.priority %>
+</div>
+<%= link_to "Edit Task", edit_task_path(@task) %>
+<%= button_to "Delete Task", task_path(@task), method: :delete %>

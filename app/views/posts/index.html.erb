@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <%= link_to post_path(post) do %>   
+    <div style="border: 1px solid" href="/posts/#{post.id}"> 
+      <div style="font-size:23px"; ><%= post.title %> </div>
+    </div>
+  <% end %>
+<% end %>

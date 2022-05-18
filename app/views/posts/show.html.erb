@@ -1,0 +1,8 @@
+<div style="font-size:32px"> 
+  <%= @post.title %> 
+</div>
+<div>
+  <%= @post.text %>
+</div>
+<%= link_to "Edit Post", edit_post_path(@post) %>
+<%= button_to "Delete Post", post_path(@post), method: :delete %>

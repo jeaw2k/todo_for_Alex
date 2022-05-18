@@ -1,0 +1,5 @@
+<%= form_with url: posts_path, method: :post, local: true do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_area :text, size: "60x10" %>
+  <%= form.submit %>
+<% end %>

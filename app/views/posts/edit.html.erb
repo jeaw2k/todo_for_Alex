@@ -1,0 +1,5 @@
+<%= form_with url: post_path(@post), method: :patch, local: true do |form| %>
+  <%= form.text_field :title, value: @post.title %>
+  <%= form.text_area :text, size: "60x10", value: @post.text %>
+  <%= form.submit %>
+<% end %>

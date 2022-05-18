@@ -1,0 +1,22 @@
+<h1> Edit Task <%= @task.name %> </h1>
+<%= form_with url: task_path(@task), method: :patch, local: true do |form| %>
+  <div> 
+    <%= form.label :name %><br />
+    <%= form.text_field :name, value: @task.name %>
+  </div>
+  <div> 
+    <%= form.label :description %><br />
+    <%= form.text_area :description, size: "60x10", value: @task.description %>
+  </div>
+  <div>
+  <%= form.submit %>
+  </div>
+
+  <%= form.label :priority %><br />
+  <%= form.label :priority, "Pending", value: :pending  %>
+  <%= form.radio_button :priority, :pending %> 
+  <%= form.label :priority, "Active", value: :active %>
+  <%= form.radio_button :priority, :active %>
+  <%= form.label :priority, "Completed", value: :completed %>
+  <%= form.radio_button :priority, :completed %>
+<% end %>
