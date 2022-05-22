@@ -12,11 +12,11 @@
   <%= form.submit %>
   </div>
   
-  <%= form.label :priority %><br />
-  <%= form.label :priority, "Pending", value: :pending  %>
+  <p style=font-size:18px;><%= form.label :priority %><br /></p>
+  <b><%= form.label :priority, "Pending", value: :pending  %></b>
   <%= form.radio_button :priority, :pending %> 
-  <%= form.label :priority, "Active", value: :active %>
+  <b><%= form.label :priority, "Active", value: :active %></b>
   <%= form.radio_button :priority, :active %>
-  <%= form.label :priority, "Completed", value: :completed %>
+  <b><%= form.label :priority, "Completed", value: :completed %></b>
   <%= form.radio_button :priority, :completed %>
 <% end %>

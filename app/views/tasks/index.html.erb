@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="tasks.css">
+<body class="task">
 <% @tasks.each do |task| %>
   <%= link_to task_path(task) do %>   
-  <body class="tasks">
-    <div style="border: 1px solid" href="/tasks/#{task.id}"> 
-      <div style="font-size:23px"; > <%= task.priority %> <%= task.name %> </div>
+    <div href="/tasks/#{task.id}"> 
+      <div> <%= task.priority %> <%= task.name %> </div>
     </div> 
   </body>
   <% end %>
