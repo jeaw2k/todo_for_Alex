@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoForAlex</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="application.css">
+    <title>TodoForAlex</title> 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,15 +13,15 @@
 
   <body>
     <% if current_user %>
-      <%= link_to "Home", root_path %>
-      <%= link_to "New Post", new_post_path %>
-      <%= link_to "My Posts", posts_path %>
-      <%= link_to "New Task", new_task_path %>
-      <%= link_to "My Task", tasks_path %>
-      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
+      <ul class="menu-main">
+        <li> <a class="current">  <%= link_to "Home", root_path %></a></li>
+        <li> <a> <%= link_to "New Task", new_task_path %> </a> </li>
+        <li> <a> <%= link_to "My Task", tasks_path %> </a> </li>
+        <li> <a> <%= button_to "Sign Out", destroy_user_session_path, method: :delete %> </a> </li>
+      <% else %>
+        <li> <a> <%= link_to "Sign Up", new_user_registration_path %> </a> </li>
+        <li> <a> <%= link_to "Sign In", new_user_session_path %> </a> </li>
+      </ul>
     <% end %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -28,6 +29,7 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
 
     
     <%= yield %>
